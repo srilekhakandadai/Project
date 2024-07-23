@@ -1,10 +1,13 @@
 import React from 'react';
 
-function ItemList({ items }) {
+function ItemList({ items, deleteItem }) {
   return (
     <ul>
       {items.map((item, index) => (
-        <li key={index}>{item}</li>
+        <li key={index}>
+          {item} 
+          <button onClick={() => deleteItem(index)}>Delete</button>
+        </li>
       ))}
     </ul>
   );

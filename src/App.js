@@ -10,10 +10,15 @@ function App() {
     setItems([...items, item]);
   };
 
+  const deleteItem = (index) => {
+    const newItems = items.filter((_, i) => i !== index);
+    setItems(newItems);
+  };
+
   return (
     <div className="App">
       <h1>My Item List</h1>
-      <ItemList items={items} />
+      <ItemList items={items} deleteItem={deleteItem} />
       <AddItem addItem={addItem} />
     </div>
   );
